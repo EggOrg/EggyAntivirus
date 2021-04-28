@@ -59,6 +59,10 @@ namespace EggyAntivirus
                         else
                         {
                             ScanFile(args[1]);
+                            if (ishostcntnlong)
+                            {
+                                PrintInfo("The definition values are long. This could impact the time taken to scan files.");
+                            }
                             PrintSafe(safeproc);
                             PrintUnknown(unknownproc);
                             PrintUnsafe(unsafeproc);

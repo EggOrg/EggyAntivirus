@@ -29,5 +29,17 @@ namespace EggyAntivirus
             var hash = md5.ComputeHash(stream);
             return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
         }
+
+        public static bool IsDefLong(string[] defs)
+        {
+            if (defs.Length > 20)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -19,7 +19,8 @@ namespace EggyAntivirus
         public static int unknownproc = 0;
         public static int safeproc = 0;
         public static int scanfile = 0;
-        private static string[] hostcntn = (new WebClient().DownloadString(host)).Split(' ');
+        public static string[] hostcntn = (new WebClient().DownloadString(host)).Split(' ');
+        public static bool ishostcntnlong = IsDefLong(hostcntn);
         public static void ScanFile(string path)
         {
             try
