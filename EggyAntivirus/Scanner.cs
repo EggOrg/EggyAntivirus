@@ -33,6 +33,7 @@ namespace EggyAntivirus
                     if (dethash == thishash)
                     {
                         unsc++;
+                        Printer.LiveListUnsafeFile(path);
                     }
                 }
 

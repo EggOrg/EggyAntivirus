@@ -69,5 +69,12 @@ namespace EggyAntivirus
             }
             Console.ResetColor();
         }
+
+        public static void LiveListUnsafeFile(string unsafefile)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine($"- Unsafe file: {unsafefile}");
+            Console.ResetColor();
+        }
     }
 }
