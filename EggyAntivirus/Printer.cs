@@ -69,13 +69,5 @@ namespace EggyAntivirus
             }
             Console.ResetColor();
         }
-
-        public static void ListHelp(List<Str.HelpItem> helps)
-        {
-            foreach (Str.HelpItem help in helps)
-            {
-                Console.WriteLine($"{help.Name} - {help.Description} - {help.Usage}");
-            }
-        }
     }
 }

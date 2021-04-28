@@ -102,12 +102,11 @@ namespace EggyAntivirus
                 }
                 else if (args[0].Equals("help"))
                 {
-                    Register.RegisterCommand(new Str.HelpItem("scandir", "Scans a directory of files.", $@"{commandprefix} scandir (Directory)"));
-                    Register.RegisterCommand(new Str.HelpItem("scanfile", "Scans a file.", $@"{commandprefix} scanfile (File)"));
-                    Register.RegisterCommand(new Str.HelpItem("listdir", "Lists a directory of files.", $@"{commandprefix} listdir (Directory)"));
-                    Register.RegisterCommand(new Str.HelpItem("getmd5", "Gets the MD5 hash of a file.", $@"{commandprefix} getmd5 (File)"));
-                    Register.RegisterCommand(new Str.HelpItem("help", "Lists this help menu.", $@"{commandprefix} help"));
-                    ListHelp(Register.helps);
+                    Console.WriteLine($@"scandir - Scans a directory of files. - {commandprefix} scandir (Directory)");
+                    Console.WriteLine($@"scanfile - Scans a file. - {commandprefix} scanfile (File)");
+                    Console.WriteLine($@"listdir - Lists a directory of files. - {commandprefix} listdir (Directory)");
+                    Console.WriteLine($@"getmd5 - Gets the MD5 hash of a file. - {commandprefix} getmd5 (File)");
+                    Console.WriteLine($@"help - Lists this help menu. - {commandprefix} help");
                 }
                 else
                 {
