@@ -75,6 +75,15 @@ namespace EggyAntivirus
                         Console.WriteLine(GetMD5(args[1]));
                     }
                 }
+                else if (args[0].Equals("help"))
+                {
+                    Register.RegisterCommand(new Str.HelpItem("scandir", "Scans a directory of files.", $@"{commandprefix} scandir (Directory)"));
+                    Register.RegisterCommand(new Str.HelpItem("scanfile", "Scans a file.", $@"{commandprefix} scanfile (File)"));
+                    Register.RegisterCommand(new Str.HelpItem("listdir", "Lists a directory of files.", $@"{commandprefix} listdir (Directory)"));
+                    Register.RegisterCommand(new Str.HelpItem("getmd5", "Gets the MD5 hash of a file.", $@"{commandprefix} getmd5 (File)"));
+                    Register.RegisterCommand(new Str.HelpItem("help", "Lists this help menu.", $@"{commandprefix} help"));
+                    ListHelp(Register.helps);
+                }
                 else
                 {
                     PrintError("Unknown command.");
