@@ -30,7 +30,7 @@ namespace EggyAntivirus
                 string thishash = GetMD5(path);
                 foreach (string dethash in hostcntn)
                 {
-                    Console.Title = $"{name} - Scanning file {scanfile} against hash {dethash}";
+                    System.Console.Title = $"{name} - Scanning file {scanfile} against hash {dethash}";
                     if (dethash == thishash)
                     {
                         unsc++;
