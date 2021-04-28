@@ -18,16 +18,18 @@ namespace EggyAntivirus
         public static int unsafeproc = 0;
         public static int unknownproc = 0;
         public static int safeproc = 0;
+        public static int scanfile = 0;
         private static string[] hostcntn = (new WebClient().DownloadString(host)).Split(' ');
         public static void ScanFile(string path)
         {
             try
             {
+                scanfile++;
                 int unsc = 0;
                 string thishash = GetMD5(path);
                 foreach (string dethash in hostcntn)
                 {
-                    Console.Title = $"{name} - testing {path} against {dethash}";
+                    Console.Title = $"{name} - Scanning file {scanfile} against hash {dethash}";
                     if (dethash == thishash)
                     {
                         unsc++;
