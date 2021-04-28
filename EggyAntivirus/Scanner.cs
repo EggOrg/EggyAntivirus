@@ -20,7 +20,7 @@ namespace EggyAntivirus
         public static int safeproc = 0;
         public static int scanfile = 0;
         public static string[] hostcntn = (new WebClient().DownloadString(host)).Split(' ');
-        public static bool ishostcntnlong = IsDefLong(hostcntn);
+        public static bool ishostcntnlong = false;
         public static void ScanFile(string path)
         {
             try
@@ -53,6 +53,10 @@ namespace EggyAntivirus
             {
                 unknownproc++;
             }
+        }
+        public static void Init()
+        {
+            ishostcntnlong = IsDefLong(hostcntn);
         }
     }
     class GetFiles
