@@ -15,7 +15,7 @@ namespace EggyAntivirus
         static void Main(string[] args)
         {
             MakeDivider(name);
-            if (args.Length < 2)
+            if (args.Length < 1)
             {
                 PrintError("Please give a command.");
             }
@@ -23,36 +23,54 @@ namespace EggyAntivirus
             {
                 if (args[0].Equals("scandir"))
                 {
-                    if (!(Directory.Exists(args[1])))
+                    if (args.Length < 2)
                     {
-                        PrintError("Directory nonexistent.");
+                        PrintError("Not enough args.");
                     }
                     else
                     {
-                        ApplyAllFiles(args[1], Process);
-                        PrintSafe(safeproc);
-                        PrintUnknown(unknownproc);
-                        PrintUnsafe(unsafeproc);
-                        ListUnsafeFiles(unsafefiles);
+                        if (!(Directory.Exists(args[1])))
+                        {
+                            PrintError("Directory nonexistent.");
+                        }
+                        else
+                        {
+                            ApplyAllFiles(args[1], Process);
+                            PrintSafe(safeproc);
+                            PrintUnknown(unknownproc);
+                            PrintUnsafe(unsafeproc);
+                            ListUnsafeFiles(unsafefiles);
+                        }
                     }
                 }
                 else if (args[0].Equals("scanfile"))
                 {
-                    if (!(File.Exists(args[1])))
+                    if (args.Length < 2)
                     {
-                        PrintError("File nonexistent.");
+                        PrintError("Not enough args.");
                     }
                     else
                     {
-                        ScanFile(args[1]);
-                        PrintSafe(safeproc);
-                        PrintUnknown(unknownproc);
-                        PrintUnsafe(unsafeproc);
-                        ListUnsafeFiles(unsafefiles);
+                        if (!(File.Exists(args[1])))
+                        {
+                            PrintError("File nonexistent.");
+                        }
+                        else
+                        {
+                            ScanFile(args[1]);
+                            PrintSafe(safeproc);
+                            PrintUnknown(unknownproc);
+                            PrintUnsafe(unsafeproc);
+                            ListUnsafeFiles(unsafefiles);
+                        }
                     }
                 }
                 else if (args[0].Equals("listdir"))
                 {
+                    if (args.Length < 2)
+                    {
+                        PrintError("Not enough args.");
+                    }
                     if (!(Directory.Exists(args[1])))
                     {
                         PrintError("Directory nonexistant.");
@@ -66,13 +84,20 @@ namespace EggyAntivirus
                 }
                 else if (args[0].Equals("getmd5"))
                 {
-                    if (!(File.Exists(args[1])))
+                    if (args.Length < 2)
                     {
-                        PrintError("File nonexistant");
+                        PrintError("Not enough args.");
                     }
                     else
                     {
-                        Console.WriteLine(GetMD5(args[1]));
+                        if (!(File.Exists(args[1])))
+                        {
+                            PrintError("File nonexistant");
+                        }
+                        else
+                        {
+                            Console.WriteLine(GetMD5(args[1]));
+                        }
                     }
                 }
                 else if (args[0].Equals("help"))
