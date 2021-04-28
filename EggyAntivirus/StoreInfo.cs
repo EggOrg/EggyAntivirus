@@ -8,7 +8,7 @@ namespace EggyAntivirus
 {
     class StoreInfo
     {
-        public static string host = "https://acaiberii.is-a.dev/resources/egav/epicgamerdef.txt";
+        public static string host = "https://acaiberii.is-a.dev/resources/resources/egav/epicgamerdef.txt";
         public static string name = "EAV";
         public static string commandprefix = "eggyantivirus";
     }
