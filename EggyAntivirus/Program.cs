@@ -15,7 +15,7 @@ namespace EggyAntivirus
         static void Main(string[] args)
         {
             MakeDivider(name);
-            System.Console.Title = $"{name} - {commandprefix}";
+            System.Console.Title = $"{name} - Processing command...";
             if (args.Length < 1)
             {
                 PrintError("Please give a command.");
